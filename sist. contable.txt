@@ -1,0 +1,39 @@
++---------------------------------+
++ DISEÑO ASIENTOS CONTABLES BLASI +
++---------------------------------+
+
+REGISTRO DE TAREAS: https://docs.google.com/spreadsheets/u/1/d/1ORjSe6TKZr4ZItZNb4zklzdInrKZhjQ6EZZp-4eRNNM/edit?pli=1&gid=0#gid=0
+DICCIONARIO DE DATOS: https://docs.google.com/spreadsheets/d/1cOoKRIbbekCE1GBPch95xhyKNz9tQuYEybWVENX1HOc/edit?usp=sharing
+------------------------------------------
+
+
+*pag principal - inicio : navbar con registro y logeo
+*registro y logeo (user y adm) : el form de logeo debe verificar la tabla de admins y luego la de usuarios, o usar solo tabla usuarios, y si usuarios.rol > 0, que se redirija al panel adm.
+En el logeo se va a pedir como campo no requerido el nombre de la empresa, en caaso de no compleralo en ese omento, se pedira antes de comenzar los registros.
+
+*PANEL CONTABLE
+-plan de cuentas : tabla (cod_rubro, rubro, cod_subrut, subrubros, id_cuenta, cuenta)
+-sub diario de compras : tabla (doc_respaldatorio, fecha, contacto, importe, condicion)
+-sub diario de ventas : tabla (doc_respaldatorio, fecha, contacto, importe, condicion)
+-libro diario : inputs (fecha, num_asiento, doc_respaldatorios, datos_adjuntos (????))
+	combobox: (leyenda, usuario)
+	tabla combobox: (V, CUENTA, debe, haber)
+	tabla: (cuenta, saldo de cuenta)
+	tabla: (fecha, num_asiento, doc_respaldatorios, datos_adjuntos, usuario, leyenda)
+-listado asientos : tabla (fecha, num_asiento, doc_respaldatorio, datos_adjuntos, usuario, leyenda)
+
+*INFORMES (REPORTES)
+-Libro Diario: tabla: num_asiento, v, cuenta, debe, haber
+			debe tener una opcion para exportar a PDF, y se debe poder editar el asiento.
+-Libro Mayor: tabla: fecha, num_asiento, debe, haber, saldo
+-Gráficos: grafico de porcentaje por rubros.
+		grafico de porcentaje por subrubros.		
+-Estado de situación patrimonial: tabla: cod_rubro, RUBRO, cod_subrubro, SUBRUBROS, importe
+-Estado de resultados: tabla: cod_rubro, RUBRO,cod_subrubro, SUBRUBROS, Cuenta, Saldos
+-Estado de fondos: tabla: cod_rubro, RUBRO, cod_subrubro, SUBRUBROS, Cuenta, importe
+-Análisis de índices:
+tabla 1: activos_corrientes, pasivos_corrientes, indice_de_liquidez
+tabla 2: saldos_activos, saldos_pasivos, indice_de_solvencia
+tabla 3: saldo_de_pasivo, saldo_pn, indice_de_endeudamiento
+tabla 4: costo_de_mercancias_vencidas, ventas, indice_del_costo_de_ventas
+tabla 5: utilidad_del_ejercicio, patrimonio_neto, indice_del_retorno_de_la_inversion
